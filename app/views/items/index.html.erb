@@ -8,33 +8,15 @@
 
   <body>
 
+<div class = "jumbotron text-center">
     <h1>Cat's Eyes</h1>
     <h2>Tout ce que dont vous rêvez à propos des chats</h2>
+</div
 
-    <ul>
-      <% if user_signed_in? %>
-        <li>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
-        </li>
-        <li>
-          Voici ton email : <%= current_user.email %>
-        </li>
-        <li>
-          <%= link_to "Edit email / password", edit_user_registration_path %>
-        </li>
-
-
-        <% else %>
-        <li>
-          <%= link_to 'Se connecter', new_user_session_path %>
-        </li>
-        <li>
-          <%= link_to "S'inscrire", new_user_registration_path %>
-        </li>
-      <% end %>
-    </ul>
-
+<div class="">
     <%= render 'items'%>
+</div>
+
 
   </body>
 
