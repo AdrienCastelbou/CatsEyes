@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Catseyes</title>
+    <title>Cat's Eyes</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Kit Font Awesome -->
+   <script src="https://kit.fontawesome.com/662ce12a4c.js" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -17,10 +21,13 @@
     <p class="alert"><%= alert %></p>
 
 
-    <%= yield %>
 
+    <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
+    <%= render 'layouts/footer' %>
+
+
   </body>
 </html>
