@@ -1,25 +1,75 @@
-<h2>Inscription</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+
+<div class="tab-content" id="tabs-collapse">
+
+
+    <div role="tabpanel" class="tab-pane fade in active" id="contact1">
+
+
+        <div id="contact-inner" class="nopadding-lr dark-wrapper opaqued background-cover" style="background-image: url('assets/img/bg/bg1.jpg');">
+
+
+      <div class="section-inner dark-opaqued">
+        <div class="text-center">
+            <h2>Inscription</h2>
+        </div>
+
+          <div class="container">
+              <div class="row" style = "display: flex; flex-direction: row; justify-content: center">
+                  <div class="col-md-6">
+                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= f.error_notification %>
+                <div class="field text-center">
+                        <%= f.label :email %><br />
+                        <%= f.email_field :email,
+                                    class:"form-control",
+                                    style:"background-color:white",
+                                    required: true,
+                                    autofocus: true,
+                                    input_html: { autocomplete: "email" }%>
+                      </div>
+
+                      <div class="field text-center">
+                        <%= f.label :password %><br />
+                        <%= f.password_field :password,
+                                            class:"form-control",
+                                            style:"background-color:white",
+                                            required: true,
+                                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                                            input_html: { autocomplete: "new-password" } %>
+                      </div>
+
+                      <div class="field text-center">
+                        <%= f.label :password_confirmation %><br />
+                        <%= f.password_field :password_confirmation,
+                                            class:"form-control",
+                                            style:"background-color:white",
+                                            required: true,
+                                            input_html: { autocomplete: "new-password" } %>
+                      </div>
+
+
+
+                      <div class="action text-center">
+                        <%= f.button :submit, "Valider", class:"btn btn-primary mt30 btn-white"%>
+                      </div>
+
+                    <% end %>
+
+                    <br>
+                    <h3 class="text-center">Vous avez déjà un compte ?</h3>
+                    <div class="text-center">
+                      <%= render "devise/shared/links" %>
+                    </div>
+
+
+
+              </div>
+          </div>
+      </div>
   </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+</div>

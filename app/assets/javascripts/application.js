@@ -17,3 +17,4 @@
 //= require bootstrap.min
 //= require jquery
 //= require plugins
+//= require init

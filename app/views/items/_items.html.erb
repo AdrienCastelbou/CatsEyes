@@ -1,15 +1,42 @@
-<div class = "container mt-3">
-  <div class = "row">
-  <% @items.each do |item|%>
-  <div class="card m-3" style="width: 18rem;">
-    <img src="<%= item.image_url %>" class="card-img-top rounded" alt="..."  style = "height: 20rem">
-    <div class="card-body">
-      <h5 class="card-title"><%= item.title%></h5>
-      <p class="card-text"><%= item.description%></p>
+<section>
+    <div class="section-inner nopaddingtop">
+        <div class="container">
+            <div class="row" style = "display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
 
-      <%= link_to "<span class = 'btn btn-primary'>Voir l'article</span>".html_safe, item_path(item.id) %>
+                  <% @items.each do |item|%>
+
+                    <div class="card" style = "height: auto; width: 33%; margin-top:10px;">
+                      <div class="hover-item">
+                          <img src="<%= item.image_url %>" class="img-responsive smoothie wow fadeIn" data-wow-delay="0.5s" alt="">
+                          <div class="overlay-item-caption smoothie wow fadeIn" data-wow-delay="0.5s"></div>
+                          <div class="hover-item-caption smoothie">
+                              <div class="vertical-center smoothie">
+                                  <h2>
+                                      <span class="fas fa-star"></span>
+                                      <span class="fas fa-star"></span>
+                                      <span class="fas fa-star"></span>
+                                      <span class="fas fa-star"></span>
+                                      <span class="fas fa-star"></span>
+                                  </h2>
+                                  <%= link_to "<button class = 'btn btn-primary'>Voir la photo</button>".html_safe, item_path(item.id)%>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="item-excerpt">
+                          <h4 class="pull-right">24.99 €</h4>
+                          <h4><%= item.title %></h4>
+                          <p><%= item.description %></p>
+                      </div>
+                    </div>
+
+                  <% end %>
+
+
+
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
-  <% end %>
-  </div>
-</div>
+</section>
