@@ -12,7 +12,9 @@
   <h1> Bienvenue <%= @user.email%></h1>
   <hr>
   <h2> Commandes passées </h2>
-  <p> Ajouter boucle permettant de voir toutes les commandes en cliquant le lien associé à chacune </p>
+  <%current_user.orders.each do |order|%>
+  <%= link_to "#{order.created_at}", order_path(order.id) %><br>
+  <% end %>
   <hr>
   <h2>Informations personnnelles</h2>
   <p> Nom : <%= @user.name%> </p>
