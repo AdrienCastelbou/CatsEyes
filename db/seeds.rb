@@ -16,4 +16,4 @@ ItemCart.delete_all
   Item.create(title: Faker::Creature::Cat.name, description: Faker::Creature::Cat.breed, price: rand(1..50)).cat_image.attach(io: file, filename: 'some-image.jpg')
 end
 
-User.create(email: "admin@yopmail.com", name: "admin", password: "aadmin", admin: true)
+User.create(email: "aadmin@yopmail.com", name: "admin", password: "aadmin", admin: true)

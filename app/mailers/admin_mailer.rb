@@ -4,6 +4,6 @@ class AdminMailer < ApplicationMailer
     @user = user
     @cart = user.cart
     @url  = 'https://catseyes.herokuapp.com/'
-    mail(to: "admin@yopmail.com", subject: 'Commande effectuée')
+    mail(to: User.find_by(admin: true).email, subject: 'Commande effectuée')
   end
 end
